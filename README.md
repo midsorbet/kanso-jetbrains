@@ -1,5 +1,14 @@
 # Kansō for JetBrains IDEs
 
+> [!WARNING]
+> **This project is entirely vibecoded.**
+>
+> An LLM (Anthropic Claude, through the OMP coding agent) wrote all of the
+> code, tests, and documentation. The owner only steered it and looked at the
+> result in an IDE. Nobody has reviewed the code line by line. The tests check
+> the named properties and nothing more. Use it at your own risk; see
+> [LICENSE](LICENSE) for the provenance record and the LLM disclaimer.
+
 UI themes and editor color schemes for IntelliJ-based IDEs, generated from
 [kanso.nvim](https://github.com/webhooked/kanso.nvim):
 
@@ -79,6 +88,11 @@ tests cover correctness, not taste.
 
 ## License
 
-MIT, see `LICENSE`. The colors come from kanso.nvim (MIT). The files in
-`intellij/` are copied from JetBrains/intellij-community and the IDE build
-named by their directory (Apache-2.0); see `intellij/NOTICE`.
+Original project material is licensed under **`MIT OR LicenseRef-VIBE-1.0`**,
+at your choice. See [LICENSE](LICENSE) and the full texts in
+[LICENSES](LICENSES). Choosing MIT does not require VIBE's
+modification-provenance disclosure. VIBE is not OSI-approved and has no SPDX
+License List identifier.
+
+The colors come from kanso.nvim (MIT). The files in `intellij/` are copied from
+JetBrains IntelliJ IDEA (Apache-2.0); see `intellij/NOTICE`.

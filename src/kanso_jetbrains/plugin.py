@@ -18,6 +18,7 @@ DESCRIPTION = """\
 generated from <a href="https://github.com/webhooked/kanso.nvim">kanso.nvim</a>.</p>
 <p>Each theme extends the Islands theme of the same brightness and sets a matching editor color scheme.
 The syntax colors follow kanso.nvim's highlight groups; comments and keywords are italic, as in kanso.nvim.</p>
+<p><b>This plugin is entirely vibecoded:</b> an LLM wrote all of it, and nobody has reviewed the code line by line.</p>
 """
 
 

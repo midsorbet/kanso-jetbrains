@@ -1,29 +1,72 @@
-MIT License
+kanso-jetbrains license
 
 Copyright (c) 2026 midsorbet
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+SPDX-License-Identifier: MIT OR LicenseRef-VIBE-1.0
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Original kanso-jetbrains material is dual-licensed. You may use it under either
+of these licenses, at your choice:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+- the MIT License: LICENSES/MIT.txt
+- the VIBE Permissive License: LICENSES/LicenseRef-VIBE-1.0.txt
 
----
+You only need to follow the license you choose.
 
-The color palette in palette/kanso.json is exported from kanso.nvim:
+If you choose MIT, the ordinary MIT terms apply: keep the copyright notice and
+the MIT permission notice with all copies or substantial portions.
 
-Copyright (c) webhooked
+If you choose VIBE, keep the copyright notice and the VIBE permission notice
+with all copies or substantial portions. VIBE adds one condition that MIT does
+not have. If you redistribute a modified version, you must disclose whether
+large language models (LLMs) were used to generate or assist your
+modifications. If they were, you must give a brief provenance record naming,
+when known, the LLM vendor, the model name, and the model version or date
+(VIBE clause 2).
 
-Licensed under the MIT License (https://github.com/webhooked/kanso.nvim).
+The VIBE Permissive License is not OSI-approved and is not on the SPDX License
+List. This project identifies it as LicenseRef-VIBE-1.0.
+
+LLM provenance
+--------------
+
+An LLM wrote all of this project's code, tests, and documentation, steered by
+the owner. Provenance record:
+
+- LLM vendor: Anthropic
+- Model name: Claude Opus (anthropic/claude-opus-5-5), run through the OMP
+  coding agent
+- Date: 2026-11-12
+
+Nobody has reviewed the output line by line. VIBE clause 3 (LLM-generated
+material disclaimer) applies to all of it.
+
+Origin of the VIBE text
+-----------------------
+
+LICENSES/LicenseRef-VIBE-1.0.txt is a copy of the file LICENSE from
+https://github.com/murillo128/vibe-license at commit
+ed34c78d9eb5534c1800daeb7612302f26cd84ab. The copy differs from upstream in
+two ways only:
+
+1. A copyright line was added at the top. The upstream text has no copyright
+   line, but its clause 1 requires "the above copyright notice".
+2. The upstream "LLM GENERATION SUMMARY" block was left out; the provenance
+   record above takes its place.
+
+All other upstream text is unchanged, including its last line,
+"SPDX-License-Identifier: VIBE", which is upstream's own marker. This project's
+own metadata uses LicenseRef-VIBE-1.0 instead.
+
+Third-party material
+--------------------
+
+The choice above covers original kanso-jetbrains material only. These files
+stay under their upstream licenses and keep their upstream notices:
+
+- palette/kanso.json: colors exported from kanso.nvim,
+  Copyright (c) webhooked, MIT License
+  (https://github.com/webhooked/kanso.nvim). The generated themes carry these
+  colors.
+- intellij/: copies of JetBrains IntelliJ IDEA theme and scheme files,
+  Copyright 2000-2026 JetBrains s.r.o. and contributors, Apache License 2.0.
+  See intellij/NOTICE.
