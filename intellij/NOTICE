@@ -1,0 +1,13 @@
+The files in the directories below are unmodified copies of files from
+IntelliJ IDEA, build named by the directory:
+
+- *.theme.json: platform/platform-resources/src/themes/ in
+  https://github.com/JetBrains/intellij-community (tag idea/<build>).
+- DefaultColorSchemesManager.xml: lib/intellij.platform.resources.jar of the IDE.
+- additional-attributes.json: the additionalTextAttributes files that bundled
+  plugins register for the Default and Darcula schemes, collected by
+  scripts/extract-ide-schemes.py.
+
+Copyright 2000-2026 JetBrains s.r.o. and contributors.
+Licensed under the Apache License, Version 2.0:
+https://www.apache.org/licenses/LICENSE-2.0

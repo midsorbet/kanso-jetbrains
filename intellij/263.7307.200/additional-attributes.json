@@ -1,0 +1,645 @@
+{
+ "Darcula": {
+  "$EXCLUDED_NODE": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": "808080",
+   "EFFECT_TYPE": "3",
+   "FONT_TYPE": null,
+   "FOREGROUND": null
+  },
+  "$HAS_READ_ONLY_CHILD": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FONT_TYPE": null,
+   "FOREGROUND": "FF0000"
+  },
+  "$INVALID_PREFIX": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FONT_TYPE": null,
+   "FOREGROUND": "FF0000"
+  },
+  "$NUMBER_OF_USAGES": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FOREGROUND": "808080"
+  },
+  "$OCCURENCE": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FONT_TYPE": "1",
+   "FOREGROUND": null
+  },
+  "$READ_ONLY_PREFIX": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FONT_TYPE": null,
+   "FOREGROUND": "FF0000"
+  },
+  "$SELECTED_OCCURENCE": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FONT_TYPE": "1",
+   "FOREGROUND": null
+  },
+  "$TEXT_NODE": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FONT_TYPE": "1",
+   "FOREGROUND": null
+  },
+  "BASH.BINARY_DATA": {
+   "BACKGROUND": "cfe7ff"
+  },
+  "BASH.EXTERNAL_COMMAND": {
+   "FOREGROUND": "c57633"
+  },
+  "BASH.HERE_DOC_END": {
+   "FONT_TYPE": "1"
+  },
+  "BASH.HERE_DOC_START": {
+   "FONT_TYPE": "1"
+  },
+  "BASH.SHEBANG": {
+   "FONT_TYPE": "1"
+  },
+  "COMPOSE_INVISIBLE_PORT_BUTTON": {
+   "EFFECT_COLOR": "43454A",
+   "FOREGROUND": "43454A"
+  },
+  "COMPOSE_SERVICE_STATUS_ERROR": {
+   "BACKGROUND": "E55765",
+   "FOREGROUND": "DB5C5C"
+  },
+  "COMPOSE_SERVICE_STATUS_NEUTRAL": {
+   "BACKGROUND": "A8ADBD",
+   "FOREGROUND": "B4B8BF"
+  },
+  "COMPOSE_SERVICE_STATUS_SUCCESS": {
+   "BACKGROUND": "208A3C",
+   "FOREGROUND": "57965C"
+  },
+  "CONSOLE_RANGE_TO_EXECUTE": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": "036b13",
+   "EFFECT_TYPE": "0",
+   "FOREGROUND": null
+  },
+  "Closure braces": {
+   "FONT_TYPE": "1"
+  },
+  "ComposeStateReadScopeHighlightingTextAttributes": {
+   "BACKGROUND": "222288"
+  },
+  "GRAMMAR_ERROR": {
+   "EFFECT_COLOR": "713D40",
+   "EFFECT_TYPE": "WAVE"
+  },
+  "Groovy method declaration": {},
+  "HTML_CUSTOM_TAG_NAME": {
+   "FOREGROUND": "26BDA4"
+  },
+  "INVISIBLE_INLAY_BUTTON": {
+   "EFFECT_COLOR": "FFFFFF14",
+   "FOREGROUND": "43454A"
+  },
+  "IntelliJComposableCallTextAttributes": {
+   "FOREGROUND": "6BB38A"
+  },
+  "JS.GLOBAL_FUNCTION": {
+   "FOREGROUND": "ffc66d"
+  },
+  "JS.GLOBAL_VARIABLE": {
+   "FONT_TYPE": "3",
+   "FOREGROUND": "9876aa"
+  },
+  "JS.INSTANCE_MEMBER_FUNCTION": {
+   "FOREGROUND": "ffc66d"
+  },
+  "JS.LOCAL_VARIABLE": {
+   "FOREGROUND": "a9b7c6"
+  },
+  "JS.REGEXP": {
+   "FOREGROUND": "6897bb"
+  },
+  "JavaScript:INJECTED_LANGUAGE_FRAGMENT": {},
+  "KOTLIN_BACKING_FIELD_VARIABLE": {
+   "FONT_TYPE": "1"
+  },
+  "KOTLIN_CLOSURE_DEFAULT_PARAMETER": {
+   "FONT_TYPE": "1"
+  },
+  "KOTLIN_CONTEXT_ARGUMENT": {
+   "FOREGROUND": "46467c"
+  },
+  "KOTLIN_COROUTINE_DEBUGGER_VALUE": {
+   "FOREGROUND": "FF8C8B"
+  },
+  "KOTLIN_DEBUG_INFO": {
+   "EFFECT_COLOR": "ffffff",
+   "EFFECT_TYPE": "0",
+   "ERROR_STRIPE_COLOR": "ffffff"
+  },
+  "KOTLIN_DYNAMIC_FUNCTION_CALL": {
+   "EFFECT_TYPE": "0",
+   "FONT_TYPE": "3"
+  },
+  "KOTLIN_DYNAMIC_PROPERTY_CALL": {
+   "EFFECT_TYPE": "0",
+   "FONT_TYPE": "3"
+  },
+  "KOTLIN_FUNCTION_LITERAL_BRACES_AND_ARROW": {
+   "FONT_TYPE": "1"
+  },
+  "KOTLIN_LABEL": {
+   "FOREGROUND": "467cda"
+  },
+  "KOTLIN_MUTABLE_VARIABLE": {
+   "EFFECT_COLOR": "bca5c4",
+   "EFFECT_TYPE": "1"
+  },
+  "KOTLIN_NAMED_ARGUMENT": {
+   "FOREGROUND": "467cda"
+  },
+  "KOTLIN_PACKAGE_FUNCTION_CALL": {
+   "FONT_TYPE": "2"
+  },
+  "KOTLIN_PROPERTY_WITH_BACKING_FIELD": {
+   "BACKGROUND": "3f3045"
+  },
+  "KOTLIN_RESOLVED_TO_ERROR": {
+   "EFFECT_COLOR": "ff0000",
+   "EFFECT_TYPE": "0",
+   "ERROR_STRIPE_COLOR": "ff0000"
+  },
+  "KOTLIN_SMART_CAST_RECEIVER": {
+   "BACKGROUND": "223c23"
+  },
+  "KOTLIN_SMART_CAST_VALUE": {
+   "BACKGROUND": "223c23"
+  },
+  "KOTLIN_SMART_CONSTANT": {
+   "BACKGROUND": "223c23"
+  },
+  "KOTLIN_TYPE_PARAMETER": {
+   "FOREGROUND": "20999d"
+  },
+  "KUBERNETES_POD_STATUS_ERROR": {
+   "BACKGROUND": "E5576526",
+   "FOREGROUND": "DB5C5C"
+  },
+  "KUBERNETES_POD_STATUS_OTHER": {
+   "BACKGROUND": "A8ADBD26",
+   "FOREGROUND": "B4B8BF"
+  },
+  "KUBERNETES_POD_STATUS_SUCCESS": {
+   "BACKGROUND": "208A3C26",
+   "FOREGROUND": "57965C"
+  },
+  "List/map to object conversion": {
+   "FONT_TYPE": "1",
+   "FOREGROUND": "e8bf6a"
+  },
+  "MARKDOWN_BLOCK_QUOTE": {
+   "BACKGROUND": "3C3D3D"
+  },
+  "MARKDOWN_BLOCK_QUOTE_MARKER": {
+   "FOREGROUND": "808080"
+  },
+  "MARKDOWN_BOLD": {
+   "FONT_TYPE": "1"
+  },
+  "MARKDOWN_CODE_BLOCK": {
+   "BACKGROUND": "3C3D3D",
+   "FONT_TYPE": "0",
+   "FOREGROUND": "A9B7C6"
+  },
+  "MARKDOWN_CODE_FENCE": {
+   "BACKGROUND": "3C3D3D",
+   "FONT_TYPE": "0",
+   "FOREGROUND": "A9B7C6"
+  },
+  "MARKDOWN_CODE_SPAN": {
+   "BACKGROUND": "3C3D3D",
+   "FONT_TYPE": "0",
+   "FOREGROUND": "A9B7C6"
+  },
+  "MARKDOWN_HEADER": {
+   "BACKGROUND": "3c3f41",
+   "FOREGROUND": "bbbbbb"
+  },
+  "MARKDOWN_HEADER_BOLD": {
+   "FONT_TYPE": "1"
+  },
+  "MARKDOWN_ITALIC": {
+   "FONT_TYPE": "2"
+  },
+  "MERMAID_DIAGRAM_NAME": {
+   "FONT_TYPE": "3",
+   "FOREGROUND": "8888C6"
+  },
+  "MERMAID_EDGE": {
+   "FOREGROUND": "0F9795"
+  },
+  "MERMAID_FRONTMATTER_DELIMITER": {
+   "FOREGROUND": "9876AA"
+  },
+  "MERMAID_GENERIC": {
+   "FOREGROUND": "20999D"
+  },
+  "MERMAID_IDENTIFIER": {
+   "FOREGROUND": "94558D"
+  },
+  "MERMAID_KEYWORD": {
+   "FONT_TYPE": "2",
+   "FOREGROUND": "6897BB"
+  },
+  "MERMAID_NOTE": {
+   "BACKGROUND": "364135"
+  },
+  "MERMAID_TITLE": {
+   "FOREGROUND": "20999D"
+  },
+  "NG.SIGNAL": {
+   "FOREGROUND": "68AAA2"
+  },
+  "SQL_OUTER_QUERY_COLUMN": {
+   "EFFECT_COLOR": "9876aa",
+   "EFFECT_TYPE": "1",
+   "FOREGROUND": "9876aa"
+  },
+  "SQL_SYNTHETIC_ENTITY": {
+   "FOREGROUND": "ffc66d"
+  },
+  "Static property reference ID": {
+   "FONT_TYPE": "2",
+   "FOREGROUND": "9876aa"
+  },
+  "TEXT_STYLE_ERROR": {
+   "EFFECT_COLOR": "C75450",
+   "EFFECT_TYPE": "BOLD_DOTTED_LINE"
+  },
+  "TEXT_STYLE_SUGGESTION": {
+   "EFFECT_COLOR": "3592C4",
+   "EFFECT_TYPE": "BOLD_DOTTED_LINE"
+  },
+  "TEXT_STYLE_WARNING": {
+   "EFFECT_COLOR": "F0A732",
+   "EFFECT_TYPE": "BOLD_DOTTED_LINE"
+  },
+  "TS.TYPE_GUARD": {
+   "BACKGROUND": "223C23"
+  },
+  "TS.TYPE_PARAMETER": {
+   "FOREGROUND": "507874"
+  },
+  "Unresolved reference access": {
+   "EFFECT_COLOR": "808080",
+   "EFFECT_TYPE": "5",
+   "FOREGROUND": "808080"
+  },
+  "XML_CUSTOM_TAG_NAME": {
+   "FOREGROUND": "26BDA4"
+  },
+  "YAML_ANCHOR": {
+   "FOREGROUND": "e8bf6a"
+  }
+ },
+ "Default": {
+  "$EXCLUDED_NODE": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": "808080",
+   "EFFECT_TYPE": "3",
+   "FONT_TYPE": null,
+   "FOREGROUND": null
+  },
+  "$HAS_READ_ONLY_CHILD": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FONT_TYPE": null,
+   "FOREGROUND": "FF0000"
+  },
+  "$INVALID_PREFIX": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FONT_TYPE": null,
+   "FOREGROUND": "FF0000"
+  },
+  "$NUMBER_OF_USAGES": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FOREGROUND": "808080"
+  },
+  "$OCCURENCE": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FONT_TYPE": "1",
+   "FOREGROUND": null
+  },
+  "$READ_ONLY_PREFIX": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FONT_TYPE": null,
+   "FOREGROUND": "FF0000"
+  },
+  "$SELECTED_OCCURENCE": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FONT_TYPE": "1",
+   "FOREGROUND": null
+  },
+  "$TEXT_NODE": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": null,
+   "EFFECT_TYPE": null,
+   "FONT_TYPE": "1",
+   "FOREGROUND": null
+  },
+  "BASH.BINARY_DATA": {
+   "BACKGROUND": "cfe7ff"
+  },
+  "BASH.EXTERNAL_COMMAND": {
+   "FOREGROUND": "0073bf"
+  },
+  "BASH.FUNCTION_CALL": {
+   "FOREGROUND": "c57633"
+  },
+  "BASH.FUNCTION_DEF_NAME": {
+   "FOREGROUND": "c57633"
+  },
+  "BASH.INTERNAL_COMMAND": {
+   "FOREGROUND": "b0c95"
+  },
+  "BASH.SHEBANG": {
+   "FONT_TYPE": "1"
+  },
+  "COMPOSE_INVISIBLE_PORT_BUTTON": {
+   "EFFECT_COLOR": "D3D5DB",
+   "FOREGROUND": "D3D5DB"
+  },
+  "COMPOSE_SERVICE_STATUS_ERROR": {
+   "BACKGROUND": "E55765",
+   "FOREGROUND": "CC3645"
+  },
+  "COMPOSE_SERVICE_STATUS_NEUTRAL": {
+   "BACKGROUND": "A8ADBD",
+   "FOREGROUND": "6C707E"
+  },
+  "COMPOSE_SERVICE_STATUS_SUCCESS": {
+   "BACKGROUND": "208A3C",
+   "FOREGROUND": "1F8039"
+  },
+  "CONSOLE_RANGE_TO_EXECUTE": {
+   "BACKGROUND": null,
+   "EFFECT_COLOR": "baa8ff",
+   "EFFECT_TYPE": "0",
+   "FOREGROUND": null
+  },
+  "Closure braces": {
+   "FONT_TYPE": "1"
+  },
+  "ComposeStateReadScopeHighlightingTextAttributes": {
+   "BACKGROUND": "AAAAFF"
+  },
+  "GRAMMAR_ERROR": {
+   "EFFECT_COLOR": "E99BA0",
+   "EFFECT_TYPE": "WAVE"
+  },
+  "GROOVY_KEYWORD": {
+   "FONT_TYPE": "1",
+   "FOREGROUND": "000043"
+  },
+  "HTTP_REQUEST_MULTIPART_BOUNDARY": {
+   "FONT_TYPE": "3",
+   "FOREGROUND": "808080"
+  },
+  "HTTP_REQUEST_PARAMETER_NAME": {
+   "FONT_TYPE": "0",
+   "FOREGROUND": "7A7A43"
+  },
+  "HTTP_REQUEST_PARAMETER_VALUE": {
+   "FONT_TYPE": "0",
+   "FOREGROUND": "458383"
+  },
+  "INVISIBLE_INLAY_BUTTON": {
+   "EFFECT_COLOR": "0000000F",
+   "FOREGROUND": "D3D5DB"
+  },
+  "Instance property reference ID": {
+   "FONT_TYPE": "0"
+  },
+  "IntelliJComposableCallTextAttributes": {
+   "FOREGROUND": "009900"
+  },
+  "JS.GLOBAL_FUNCTION": {
+   "FONT_TYPE": "2"
+  },
+  "JS.GLOBAL_VARIABLE": {
+   "FONT_TYPE": "3",
+   "FOREGROUND": "660e7a"
+  },
+  "JS.INSTANCE_MEMBER_FUNCTION": {
+   "FOREGROUND": "914C07"
+  },
+  "JS.LOCAL_VARIABLE": {
+   "FOREGROUND": "458383"
+  },
+  "JS.PARAMETER": {
+   "EFFECT_COLOR": "0",
+   "EFFECT_TYPE": "1"
+  },
+  "JS.REGEXP": {
+   "FOREGROUND": "ff"
+  },
+  "JavaScript:INJECTED_LANGUAGE_FRAGMENT": {},
+  "KOTLIN_BACKING_FIELD_VARIABLE": {
+   "FONT_TYPE": "1"
+  },
+  "KOTLIN_CLOSURE_DEFAULT_PARAMETER": {
+   "FONT_TYPE": "1"
+  },
+  "KOTLIN_CONTEXT_ARGUMENT": {
+   "FOREGROUND": "4a4a86"
+  },
+  "KOTLIN_COROUTINE_DEBUGGER_VALUE": {
+   "FOREGROUND": "840000"
+  },
+  "KOTLIN_DEBUG_INFO": {
+   "EFFECT_COLOR": "000000",
+   "EFFECT_TYPE": "0",
+   "ERROR_STRIPE_COLOR": "000000"
+  },
+  "KOTLIN_DYNAMIC_FUNCTION_CALL": {
+   "EFFECT_TYPE": "0",
+   "FONT_TYPE": "3"
+  },
+  "KOTLIN_DYNAMIC_PROPERTY_CALL": {
+   "EFFECT_TYPE": "0",
+   "FONT_TYPE": "3"
+  },
+  "KOTLIN_FUNCTION_LITERAL_BRACES_AND_ARROW": {
+   "FONT_TYPE": "1"
+  },
+  "KOTLIN_LABEL": {
+   "FOREGROUND": "4a86e8"
+  },
+  "KOTLIN_MUTABLE_VARIABLE": {
+   "EFFECT_COLOR": "000000",
+   "EFFECT_TYPE": "1"
+  },
+  "KOTLIN_NAMED_ARGUMENT": {
+   "FOREGROUND": "4a86e8"
+  },
+  "KOTLIN_PROPERTY_WITH_BACKING_FIELD": {
+   "BACKGROUND": "f5d7ef"
+  },
+  "KOTLIN_RESOLVED_TO_ERROR": {
+   "EFFECT_COLOR": "ff0000",
+   "EFFECT_TYPE": "0",
+   "ERROR_STRIPE_COLOR": "ff0000"
+  },
+  "KOTLIN_SMART_CAST_RECEIVER": {
+   "BACKGROUND": "dbffdb"
+  },
+  "KOTLIN_SMART_CAST_VALUE": {
+   "BACKGROUND": "dbffdb"
+  },
+  "KOTLIN_SMART_CONSTANT": {
+   "BACKGROUND": "dbffdb"
+  },
+  "KUBERNETES_POD_STATUS_ERROR": {
+   "BACKGROUND": "E5576526",
+   "FOREGROUND": "CC3645"
+  },
+  "KUBERNETES_POD_STATUS_OTHER": {
+   "BACKGROUND": "A8ADBD26",
+   "FOREGROUND": "6C707E"
+  },
+  "KUBERNETES_POD_STATUS_SUCCESS": {
+   "BACKGROUND": "208A3C26",
+   "FOREGROUND": "1F8039"
+  },
+  "List/map to object conversion": {
+   "FONT_TYPE": "1",
+   "FOREGROUND": "0000ff"
+  },
+  "MARKDOWN_BLOCK_QUOTE": {
+   "BACKGROUND": "F4F7F9"
+  },
+  "MARKDOWN_BLOCK_QUOTE_MARKER": {
+   "FOREGROUND": "8C8C8C"
+  },
+  "MARKDOWN_BOLD": {
+   "FONT_TYPE": "1"
+  },
+  "MARKDOWN_CODE_BLOCK": {
+   "BACKGROUND": "F4F7F9",
+   "FONT_TYPE": "0",
+   "FOREGROUND": "080808"
+  },
+  "MARKDOWN_CODE_FENCE": {
+   "BACKGROUND": "F4F7F9",
+   "FONT_TYPE": "0",
+   "FOREGROUND": "080808"
+  },
+  "MARKDOWN_CODE_SPAN": {
+   "BACKGROUND": "F4F7F9",
+   "FONT_TYPE": "0",
+   "FOREGROUND": "080808"
+  },
+  "MARKDOWN_HEADER": {
+   "BACKGROUND": "cccccc",
+   "FOREGROUND": "000000"
+  },
+  "MARKDOWN_HEADER_BOLD": {
+   "FONT_TYPE": "1"
+  },
+  "MARKDOWN_ITALIC": {
+   "FONT_TYPE": "2"
+  },
+  "MARKDOWN_REFERENCE_LINK": {
+   "FONT_TYPE": "1"
+  },
+  "MERMAID_CONSTANT": {
+   "FOREGROUND": "660099"
+  },
+  "MERMAID_DIAGRAM_NAME": {
+   "FONT_TYPE": "3",
+   "FOREGROUND": "0033B3"
+  },
+  "MERMAID_EDGE": {
+   "FOREGROUND": "008080"
+  },
+  "MERMAID_FRONTMATTER_DELIMITER": {
+   "FOREGROUND": "871094"
+  },
+  "MERMAID_GENERIC": {
+   "FOREGROUND": "007E8A"
+  },
+  "MERMAID_IDENTIFIER": {
+   "FOREGROUND": "94558D"
+  },
+  "MERMAID_KEYWORD": {
+   "FONT_TYPE": "2",
+   "FOREGROUND": "174AD4"
+  },
+  "MERMAID_NOTE": {
+   "BACKGROUND": "EDFCED"
+  },
+  "MERMAID_TITLE": {
+   "FOREGROUND": "007E8A"
+  },
+  "SASS_MIXIN": {
+   "FONT_TYPE": "1",
+   "FOREGROUND": "008080"
+  },
+  "SQL_OUTER_QUERY_COLUMN": {
+   "EFFECT_COLOR": "660e7a",
+   "EFFECT_TYPE": "1",
+   "FONT_TYPE": "1",
+   "FOREGROUND": "660e7a"
+  },
+  "Static property reference ID": {
+   "FONT_TYPE": "2"
+  },
+  "TEXT_STYLE_ERROR": {
+   "EFFECT_COLOR": "DB5860",
+   "EFFECT_TYPE": "BOLD_DOTTED_LINE"
+  },
+  "TEXT_STYLE_SUGGESTION": {
+   "EFFECT_COLOR": "389FD6",
+   "EFFECT_TYPE": "BOLD_DOTTED_LINE"
+  },
+  "TEXT_STYLE_WARNING": {
+   "EFFECT_COLOR": "EDA200",
+   "EFFECT_TYPE": "BOLD_DOTTED_LINE"
+  },
+  "TS.TYPE_GUARD": {
+   "BACKGROUND": "f0ffe1"
+  },
+  "TS.TYPE_PARAMETER": {
+   "FOREGROUND": "20999d"
+  },
+  "Unresolved reference access": {
+   "EFFECT_COLOR": "808080",
+   "EFFECT_TYPE": "5",
+   "FOREGROUND": "000000"
+  },
+  "YAML_ANCHOR": {
+   "FOREGROUND": "0000ff"
+  }
+ }
+}
