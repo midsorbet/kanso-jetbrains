@@ -48,8 +48,10 @@ under Settings > Appearance & Behavior > Appearance.
   inherit the matching `DEFAULT_*` attribute or get remapped colors. Code below
   3:1 is moved the same way; in Pearl this darkens the orange warning color.
 - A few UI choices are not in kanso.nvim: the accent color (the VS Code badge
-  color for the dark variants, Pearl's function blue for Pearl) and Pearl's
-  selection color (the VS Code selection color).
+  color for the dark variants, Pearl's function blue for Pearl), Pearl's
+  selection color (the VS Code selection color), and tighter spacing in
+  compact density (2 px between islands instead of 4, 10 px corners instead
+  of 16).
 
 ## Tests
 

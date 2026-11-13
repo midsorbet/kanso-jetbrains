@@ -234,6 +234,11 @@ def ui_overrides(v: Variant) -> dict:
         "ToolWindow.Button.selectedBackground": "toolbar-selected-bg-active",
         "ToolWindow.Button.selectedForeground": "icon-over-accent",
         "EditorTabs.underlineArc": 4,
+        # Compact density only: half the gap between islands and smaller corners,
+        # so the editor keeps more room. Default density keeps the parent's values.
+        "Island.borderWidth.compact": 2,
+        "Island.arc.compact": 10,
+        "Island.borderArcLength.compact": 6,
     }
     if dark:
         ui["MainWindow.Tab.background"] = s0
