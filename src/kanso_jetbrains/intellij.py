@@ -32,7 +32,7 @@ BUNDLED = {
 }
 
 TRANSPARENT = "#00000000"
-OS_KEY = "os.windows"  # Delcatty runs the IDE on Windows.
+OS_KEY = "os.windows"  # Per-OS values are checked as on Windows.
 
 
 @dataclass
