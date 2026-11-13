@@ -18,7 +18,7 @@
   }: let
     systems = ["aarch64-darwin" "x86_64-darwin" "aarch64-linux" "x86_64-linux"];
     forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
-    version = "0.1.0";
+    version = "0.1.1";
   in {
     packages = forAllSystems (pkgs: {
       default = pkgs.stdenvNoCC.mkDerivation {
