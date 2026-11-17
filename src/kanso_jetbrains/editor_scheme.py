@@ -17,7 +17,7 @@ from .variants import Variant
 
 # TextAttributes serialization values.
 BOLD, ITALIC = 1, 2
-EFFECT_UNDERSCORE, EFFECT_WAVE, EFFECT_STRIKEOUT = 1, 2, 3
+EFFECT_UNDERSCORE, EFFECT_WAVE, EFFECT_STRIKEOUT, EFFECT_BOLD_DOTTED = 1, 2, 3, 5
 ANSI_NAMES = ("BLACK", "RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "CYAN", "WHITE")
 
 
@@ -223,7 +223,122 @@ def attributes(v: Variant) -> dict[str, Attr]:
     attrs["BLOCK_TERMINAL_SEARCH_ENTRY"] = Attr(fg=fg, bg=v.search)
     attrs["BLOCK_TERMINAL_CURRENT_SEARCH_ENTRY"] = Attr(fg=s0, bg=v.diag("warning"))
     attrs["BLOCK_TERMINAL_GENERATE_COMMAND_PROMPT_TEXT"] = Attr(fg=syn("keyword"))
-    return attrs
+    return attrs | scala_attributes(v)
+
+
+def scala_attributes(v: Variant) -> dict[str, Attr]:
+    """Every key of the Scala plugin's highlighter (DefaultHighlighter), as
+    kanso.nvim colors Scala through nvim-treesitter.
+
+    Without these, the plugin's fallbacks decide: class vals and vars inherit the
+    italic static-field style, Darcula's type parameters get the comment color,
+    and the plugin's own additions (bold string injections, colored named
+    arguments, collection underlines) get the remapped stock colors.
+
+    Scala has no static members, so template vals and vars are plain fields.
+    `var` bindings are underlined like reassigned locals; object method calls
+    and givens keep the italic of static and implicit access."""
+    fg = v.ui("fg")
+    syn = v.syn
+    comment = Attr(fg=syn("comment"), font=ITALIC)
+    doc_markup = Attr(fg=syn("comment"))
+    punct = Attr(fg=syn("punct"))
+    operator = Attr(fg=syn("operator"))
+    keyword = Attr(fg=syn("keyword"), font=ITALIC)
+    type_ = Attr(fg=syn("type"))
+    local = Attr(fg=fg)
+    local_var = Attr(fg=fg, effect=syn("comment"), effect_type=EFFECT_UNDERSCORE)
+    field = Attr(fg=syn("identifier"))
+    field_var = Attr(fg=syn("identifier"), effect=syn("comment"), effect_type=EFFECT_UNDERSCORE)
+    parameter = Attr(fg=syn("parameter"))
+    function = Attr(fg=syn("fun"))
+    return {
+        # Lexer tokens. Every keyword, hard or soft (`using`, `given`, `extension`
+        # in place), uses the one keyword key.
+        "Scala Keyword": keyword,
+        "Scalatest keyword": keyword,
+        "Scala Line comment": comment,
+        "Scala Block comment": comment,
+        "Scala Number": Attr(fg=syn("number")),
+        "Scala String": Attr(fg=syn("string")),
+        "Scala Valid escape in string": Attr(fg=syn("regex")),
+        "Scala Invalid escape in string": Attr(fg=syn("regex"), effect=v.diag("error"), effect_type=EFFECT_WAVE),
+        "Scala Bad character": Attr(effect=v.diag("error"), effect_type=EFFECT_WAVE),
+        "Scala Brackets": punct,
+        "Scala Braces": punct,
+        "Scala Parentheses": punct,
+        "Scala Colon": punct,
+        "Scala Semicolon": punct,
+        "Scala Dot": punct,
+        "Scala Comma": punct,
+        "Scala Assign": operator,
+        "Scala Arrow": operator,
+        # `$name` and `${...}` in s"..." strings: @punctuation.special.
+        "Interpolated String Injection": Attr(fg=syn("special1")),
+        # Types and modules.
+        "Scala Class": type_,
+        "Scala Abstract class": type_,
+        "Scala Object": type_,
+        "Scala Enum": type_,
+        "Scala Enum Class Case": type_,
+        "Scala Trait": Attr(fg=syn("type"), font=ITALIC),
+        "Scala Type parameter": type_,
+        "Scala Type Alias": type_,
+        "Scala Predefined types": type_,
+        "Scala Package": local,
+        "Scala Enum Singleton Case": Attr(fg=syn("constant")),
+        # Values: @variable for locals, @variable.member for fields.
+        "Scala Local value": local,
+        "Scala Local lazy val/var": local,
+        "Scala Pattern value": local,
+        "Scala For statement value": local,
+        "Scala Local variable": local_var,
+        "Scala Template val": field,
+        "Scala Template lazy val/var": field,
+        "Scala Case class field": field,
+        "Scala Template var": field_var,
+        "Scala Case class var field": field_var,
+        "Scala Given": Attr(fg=syn("identifier"), font=ITALIC),
+        "Scala Parameter": parameter,
+        "Scala Anonymous Parameter": parameter,
+        "Scala Named Argument": parameter,
+        "Implicit conversion": Attr(effect=syn("comment"), effect_type=EFFECT_UNDERSCORE),
+        # Opt-in collection marks: mutable, immutable, Java. The key name has the
+        # plugin's typo; its additions use "Standard Java Collection", which no
+        # highlighter reads.
+        "Scala Mutable Collection": Attr(effect=syn("number"), effect_type=EFFECT_BOLD_DOTTED),
+        "Scala Immutable Collection": Attr(effect=syn("string"), effect_type=EFFECT_BOLD_DOTTED),
+        "StandardF Java Collection": Attr(effect=syn("type"), effect_type=EFFECT_BOLD_DOTTED),
+        # Functions.
+        "Scala Method declaration": function,
+        "Scala Class method call": function,
+        "Scala Local method call": function,
+        "Scala Object method call": Attr(fg=syn("fun"), font=ITALIC),
+        # Annotations: @attribute.
+        "Scala Annotation name": Attr(fg=syn("constant")),
+        "Scala Annotation attribute name": field,
+        # ScalaDoc, as the DEFAULT_DOC_* keys.
+        "ScalaDoc comment": comment,
+        "ScalaDoc comment tag": Attr(fg=syn("special1"), font=ITALIC),
+        "ScalaDoc @param value": Attr(fg=syn("parameter"), font=ITALIC),
+        "ScalaDoc comment markup": doc_markup,
+        "ScalaDoc html tag": doc_markup,
+        "ScalaDoc html escape sequences": doc_markup,
+        "ScalaDoc wiki syntax elements": doc_markup,
+        "ScalaDoc list item head": doc_markup,
+        # `//> using` directives of Scala CLI, as doc comments.
+        "Scala directive prefix": comment,
+        "Scala directive command": Attr(fg=syn("special1"), font=ITALIC),
+        "Scala directive key": Attr(fg=syn("parameter"), font=ITALIC),
+        "Scala directive value": comment,
+        # XML literals: @tag, @tag.attribute, @tag.delimiter.
+        "Scala XML tag": punct,
+        "Scala XML tag name": Attr(fg=syn("special1")),
+        "Scala XML tag data": local,
+        "Scala XML attribute name": field,
+        "Scala XML attribute value": Attr(fg=syn("string")),
+        "Scala XML comment": comment,
+    }
 
 
 def parent_scheme(v: Variant) -> str:

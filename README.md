@@ -47,6 +47,12 @@ under Settings > Appearance & Behavior > Appearance.
   the attributes that bundled plugins add) that the mapping does not cover
   inherit the matching `DEFAULT_*` attribute or get remapped colors. Code below
   3:1 is moved the same way; in Pearl this darkens the orange warning color.
+- The Scala plugin is not bundled with the IDE, so its keys would fall back to
+  Java's static-field and Darcula's type-parameter styles, and its own scheme
+  additions to stock colors. The schemes set every key of its highlighter
+  (`scala_attributes`), following kanso.nvim's tree-sitter groups.
+  `intellij/<build>/scala-plugin.json` holds those keys and additions for the
+  plugin release of the pinned build.
 - A few UI choices are not in kanso.nvim: the accent color (the VS Code badge
   color for the dark variants, Pearl's function blue for Pearl), Pearl's
   selection color (the VS Code selection color), and tighter spacing in
@@ -86,7 +92,9 @@ tests cover correctness, not taste.
   `nix run .#export-palette`, and review the palette diff.
 - IDE build: run `scripts/update-intellij.sh <build> <IDE home>` with that
   build installed, set `BUILD` in `src/kanso_jetbrains/intellij.py`, and run the
-  tests. New parent keys show up as test failures if they are not covered.
+  tests. New parent keys show up as test failures if they are not covered. The
+  script also takes the Scala plugin release for that build from the
+  Marketplace; a new Scala key fails the tests until the schemes set it.
 
 ## License
 

@@ -111,6 +111,17 @@ class EditorSchemeTest(unittest.TestCase):
                     with self.subTest(variant=v.key, attribute=key):
                         self.assertIn(base, own.attributes)
 
+    def test_every_scala_key_is_set(self):
+        """The Scala plugin's fallbacks lead to Java and Darcula styles that do not
+        fit Scala, so each of its keys needs its own entry."""
+        keys = intellij.scala_plugin()["keys"]
+        for v in VARIANTS:
+            own, _ = self.effective(v)
+            for key in keys:
+                with self.subTest(variant=v.key, key=key):
+                    self.assertIn(key, own.attributes)
+                    self.assertNotIn("baseAttributes", own.attributes[key])
+
     def test_code_is_readable(self):
         for v in VARIANTS:
             _, effective = self.effective(v)

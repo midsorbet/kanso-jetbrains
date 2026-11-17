@@ -23,6 +23,14 @@ REGISTRATION = re.compile(r'<additionalTextAttributes\s+scheme="(Default|Darcula
 def main() -> None:
     home, out = Path(sys.argv[1]), Path(sys.argv[2])
     out.mkdir(parents=True, exist_ok=True)
+    attributes = additional_attributes(home, copy_schemes_to=out)
+    (out / "additional-attributes.json").write_text(json.dumps(attributes, indent=1, sort_keys=True) + "\n")
+    print({scheme: len(values) for scheme, values in attributes.items()})
+
+
+def additional_attributes(home: Path, copy_schemes_to: Path | None = None) -> dict[str, dict]:
+    """The attributes that the jars under home/lib and home/plugins add to Default
+    and Darcula. With copy_schemes_to, also copy the IDE's DefaultColorSchemesManager.xml."""
     jars = sorted([*home.glob("lib/**/*.jar"), *home.glob("plugins/**/*.jar")])
     index: dict[str, list[Path]] = {}
     registrations = []
@@ -36,8 +44,8 @@ def main() -> None:
                 if not name.endswith(".xml"):
                     continue
                 index.setdefault(name, []).append(jar)
-                if name == "DefaultColorSchemesManager.xml" and jar.parent == home / "lib":
-                    (out / name).write_bytes(archive.read(name))
+                if copy_schemes_to and name == "DefaultColorSchemesManager.xml" and jar.parent == home / "lib":
+                    (copy_schemes_to / name).write_bytes(archive.read(name))
                 text = archive.read(name).decode("utf-8", "ignore")
                 if "additionalTextAttributes" in text:
                     registrations += [(m[1], m[2], jar) for m in REGISTRATION.finditer(text)]
@@ -59,8 +67,7 @@ def main() -> None:
                 attributes[scheme][key] = {o.get("name"): o.get("value") for o in value}
             elif key and option.get("baseAttributes"):
                 attributes[scheme][key] = {"baseAttributes": option.get("baseAttributes")}
-    (out / "additional-attributes.json").write_text(json.dumps(attributes, indent=1, sort_keys=True) + "\n")
-    print({scheme: len(values) for scheme, values in attributes.items()})
+    return attributes
 
 
 def _plugin_root(jar: Path, home: Path) -> Path:

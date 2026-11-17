@@ -7,6 +7,11 @@ IntelliJ IDEA, build named by the directory:
 - additional-attributes.json: the additionalTextAttributes files that bundled
   plugins register for the Default and Darcula schemes, collected by
   scripts/extract-ide-schemes.py.
+- scala-plugin.json: data from the Scala plugin release for that build
+  (https://github.com/JetBrains/intellij-scala, Marketplace id
+  org.intellij.scala): the text attribute key names of
+  org.jetbrains.plugins.scala.highlighter.DefaultHighlighter and its
+  additionalTextAttributes files, collected by scripts/extract-scala-plugin.py.
 
 Copyright 2000-2026 JetBrains s.r.o. and contributors.
 Licensed under the Apache License, Version 2.0:

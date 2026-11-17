@@ -1,0 +1,147 @@
+{
+ "additions": {
+  "Darcula": {
+   "Implicit conversion": {
+    "EFFECT_COLOR": "5f5f5f",
+    "EFFECT_TYPE": "1"
+   },
+   "Implicit conversion first part": {
+    "FOREGROUND": "1a5746"
+   },
+   "Implicit conversion second part": {
+    "FOREGROUND": "1e7866"
+   },
+   "Interpolated String Injection": {
+    "FONT_TYPE": "1",
+    "FOREGROUND": "00b8bb"
+   },
+   "Scala Immutable Collection": {
+    "EFFECT_COLOR": "accb79",
+    "EFFECT_TYPE": "5"
+   },
+   "Scala Mutable Collection": {
+    "EFFECT_COLOR": "e29ec2",
+    "EFFECT_TYPE": "5"
+   },
+   "Scala Named Argument": {
+    "FOREGROUND": "467cda"
+   },
+   "Scala Type Alias": {
+    "FOREGROUND": "4e807d"
+   },
+   "Scala Type parameter": {
+    "FOREGROUND": "4e807d"
+   },
+   "Standard Java Collection": {
+    "EFFECT_COLOR": "81c2c3",
+    "EFFECT_TYPE": "5"
+   }
+  },
+  "Default": {
+   "Implicit conversion": {
+    "EFFECT_COLOR": "c0c0c0",
+    "EFFECT_TYPE": "1"
+   },
+   "Implicit conversion first part": {
+    "FOREGROUND": "bbdfff"
+   },
+   "Implicit conversion second part": {
+    "FOREGROUND": "dff0ff"
+   },
+   "Interpolated String Injection": {
+    "FONT_TYPE": "1",
+    "FOREGROUND": "00b8bb"
+   },
+   "Scala Immutable Collection": {
+    "EFFECT_COLOR": "accb79",
+    "EFFECT_TYPE": "5"
+   },
+   "Scala Mutable Collection": {
+    "EFFECT_COLOR": "e29ec2",
+    "EFFECT_TYPE": "5"
+   },
+   "Scala Named Argument": {
+    "FOREGROUND": "4a86e8"
+   },
+   "Standard Java Collection": {
+    "EFFECT_COLOR": "81c2c3",
+    "EFFECT_TYPE": "5"
+   }
+  }
+ },
+ "keys": [
+  "Implicit conversion",
+  "Interpolated String Injection",
+  "Scala Abstract class",
+  "Scala Annotation attribute name",
+  "Scala Annotation name",
+  "Scala Anonymous Parameter",
+  "Scala Arrow",
+  "Scala Assign",
+  "Scala Bad character",
+  "Scala Block comment",
+  "Scala Braces",
+  "Scala Brackets",
+  "Scala Case class field",
+  "Scala Case class var field",
+  "Scala Class",
+  "Scala Class method call",
+  "Scala Colon",
+  "Scala Comma",
+  "Scala Dot",
+  "Scala Enum",
+  "Scala Enum Class Case",
+  "Scala Enum Singleton Case",
+  "Scala For statement value",
+  "Scala Given",
+  "Scala Immutable Collection",
+  "Scala Invalid escape in string",
+  "Scala Keyword",
+  "Scala Line comment",
+  "Scala Local lazy val/var",
+  "Scala Local method call",
+  "Scala Local value",
+  "Scala Local variable",
+  "Scala Method declaration",
+  "Scala Mutable Collection",
+  "Scala Named Argument",
+  "Scala Number",
+  "Scala Object",
+  "Scala Object method call",
+  "Scala Package",
+  "Scala Parameter",
+  "Scala Parentheses",
+  "Scala Pattern value",
+  "Scala Predefined types",
+  "Scala Semicolon",
+  "Scala String",
+  "Scala Template lazy val/var",
+  "Scala Template val",
+  "Scala Template var",
+  "Scala Trait",
+  "Scala Type Alias",
+  "Scala Type parameter",
+  "Scala Valid escape in string",
+  "Scala XML attribute name",
+  "Scala XML attribute value",
+  "Scala XML comment",
+  "Scala XML tag",
+  "Scala XML tag data",
+  "Scala XML tag name",
+  "Scala directive command",
+  "Scala directive key",
+  "Scala directive prefix",
+  "Scala directive value",
+  "ScalaDoc @param value",
+  "ScalaDoc comment",
+  "ScalaDoc comment markup",
+  "ScalaDoc comment tag",
+  "ScalaDoc html escape sequences",
+  "ScalaDoc html tag",
+  "ScalaDoc list item head",
+  "ScalaDoc wiki syntax elements",
+  "Scalatest keyword",
+  "StandardF Java Collection"
+ ],
+ "version": "2026.3.26"
+}

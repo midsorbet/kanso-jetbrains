@@ -205,15 +205,22 @@ def read_scheme_xml(text: str) -> Scheme:
     return _read_scheme(ET.fromstring(text))
 
 
+def scala_plugin() -> dict:
+    """The Scala plugin's keys and scheme additions (scala-plugin.json). The IDE does
+    not bundle the plugin, so scripts/extract-scala-plugin.py copies them."""
+    return json.loads((PARENT_DIR / "scala-plugin.json").read_text())
+
+
 def bundled_scheme(name: str) -> Scheme:
-    """Default or Darcula as the IDE sees it, with plugin additions."""
+    """Default or Darcula as the IDE sees it, with the additions of the bundled
+    plugins and of the Scala plugin."""
     root = ET.parse(PARENT_DIR / "DefaultColorSchemesManager.xml").getroot()
     schemes = {element.get("name"): _read_scheme(element) for element in root.findall("scheme")}
     scheme = schemes["Default"]
     if name == "Darcula":
         scheme = Scheme(_merge(schemes["Darcula"].colors, scheme.colors), _merge(schemes["Darcula"].attributes, scheme.attributes))
     additions = json.loads((PARENT_DIR / "additional-attributes.json").read_text())[name]
-    for key, fields in additions.items():
+    for key, fields in (additions | scala_plugin()["additions"][name]).items():
         scheme.attributes.setdefault(key, _normalize_fields(fields))
     return scheme
 

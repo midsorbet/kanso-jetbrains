@@ -17,3 +17,9 @@ for theme in islands/ManyIslandsDark islands/ManyIslandsLight expUI/expUI_dark e
   curl -fsSL "$base/$theme.theme.json" -o "$out/$(basename "$theme").theme.json"
 done
 python3 scripts/extract-ide-schemes.py "$home" "$out"
+# The Scala plugin is not bundled: take its Marketplace release for this build.
+work=$(mktemp -d)
+trap 'rm -rf "$work"' EXIT
+curl -fsSL "https://plugins.jetbrains.com/pluginManager?action=download&id=org.intellij.scala&build=IU-$build" -o "$work/scala.zip"
+unzip -q "$work/scala.zip" -d "$work"
+python3 scripts/extract-scala-plugin.py "$work/Scala" "$out"
