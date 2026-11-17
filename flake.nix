@@ -18,7 +18,7 @@
   }: let
     systems = ["aarch64-darwin" "x86_64-darwin" "aarch64-linux" "x86_64-linux"];
     forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
-    version = "0.1.1";
+    version = "0.1.2";
     # The build needs only the standard library; the tests also use Hypothesis.
     testPython = pkgs: pkgs.python3.withPackages (ps: [ps.hypothesis]);
   in {
