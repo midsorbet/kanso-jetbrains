@@ -11,7 +11,7 @@ colors instead of names: a few with chosen roles, the rest by remapped_literals.
 import re
 
 from . import intellij
-from .color import alpha, contrast, mix, rgb
+from .color import alpha, contrast, mix, readable_pair, rgb
 from .variants import Variant
 
 RAMP_STEPS = range(10, 170, 10)
@@ -316,14 +316,6 @@ def remapped_literals(v: Variant, colors: dict[str, str], explicit: dict) -> dic
 MIN_TEXT_CONTRAST = 4.5
 
 
-def _toward(color: str, target: str, other: str) -> str:
-    """`color` moved toward `target` until it has 4.5:1 against `other`."""
-    step = 0.0
-    while contrast(mix(color, target, step), other) < MIN_TEXT_CONTRAST and step < 1:
-        step = min(1.0, step + 0.05)
-    return mix(color, target, step)
-
-
 def readable_pairs(v: Variant, theme: dict) -> dict[str, str]:
     """Foreground/background pairs that fall below 4.5:1 once the theme is merged.
 
@@ -340,11 +332,10 @@ def readable_pairs(v: Variant, theme: dict) -> dict[str, str]:
         fg = intellij.opaque(resolved[fg_key], bg)
         if contrast(fg, bg) >= MIN_TEXT_CONTRAST:
             continue
-        target = light if contrast(light, bg) > contrast(dark, bg) else dark
-        fg = _toward(fg, target, bg)
-        if contrast(fg, bg) < MIN_TEXT_CONTRAST:
-            fixes[bg_key] = bg = _toward(bg, dark if target == light else light, fg)
-        fixes[fg_key] = fg
+        fixed_fg, fixed_bg = readable_pair(fg, bg, light, dark, MIN_TEXT_CONTRAST)
+        if fixed_bg != bg:
+            fixes[bg_key] = fixed_bg
+        fixes[fg_key] = fixed_fg
     return fixes
 
 

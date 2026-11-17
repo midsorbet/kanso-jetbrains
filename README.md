@@ -77,6 +77,12 @@ after the merge:
 - every color name resolves (IntelliJ makes an unknown name transparent);
 - the jar contains every file that `plugin.xml` and the themes reference.
 
+`tests/test_contrast.py` checks the contrast repair with
+[Hypothesis](https://hypothesis.readthedocs.io) for any colors, not only the
+current palette: the result always reaches the minimum, readable pairs stay
+unchanged, and in the editor Kansō's lightest or darkest color is enough on any
+background. To run the tests outside Nix, use `nix develop`.
+
 JetBrains' Plugin Verifier checks the plugin against an installed IDE:
 
 ```sh

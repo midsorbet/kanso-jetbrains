@@ -2,3 +2,4 @@
 /result-*
 /build/
 __pycache__/
+.hypothesis/

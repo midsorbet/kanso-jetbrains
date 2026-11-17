@@ -19,6 +19,8 @@
     systems = ["aarch64-darwin" "x86_64-darwin" "aarch64-linux" "x86_64-linux"];
     forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
     version = "0.1.1";
+    # The build needs only the standard library; the tests also use Hypothesis.
+    testPython = pkgs: pkgs.python3.withPackages (ps: [ps.hypothesis]);
   in {
     packages = forAllSystems (pkgs: {
       default = pkgs.stdenvNoCC.mkDerivation {
@@ -85,16 +87,16 @@
         fi
         touch $out
       '';
-      tests = pkgs.runCommand "kanso-jetbrains-tests" {nativeBuildInputs = [pkgs.python3];} ''
+      tests = pkgs.runCommand "kanso-jetbrains-tests" {nativeBuildInputs = [(testPython pkgs)];} ''
         cd ${self}
-        PYTHONPATH=src python3 -m unittest discover -s tests -v
+        HYPOTHESIS_PROFILE=ci PYTHONPATH=src python3 -m unittest discover -s tests -v
         touch $out
       '';
       plugin = self.packages.${pkgs.stdenv.hostPlatform.system}.default;
     });
 
     devShells = forAllSystems (pkgs: {
-      default = pkgs.mkShell {packages = [pkgs.python3 pkgs.neovim pkgs.jq pkgs.alejandra];};
+      default = pkgs.mkShell {packages = [(testPython pkgs) pkgs.neovim pkgs.jq pkgs.alejandra];};
     });
 
     formatter = forAllSystems (pkgs: pkgs.alejandra);

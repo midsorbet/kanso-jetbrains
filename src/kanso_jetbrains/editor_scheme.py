@@ -12,7 +12,7 @@ from dataclasses import dataclass
 from xml.etree import ElementTree as ET
 
 from . import intellij
-from .color import contrast, mix, rgb
+from .color import contrast, readable_pair, rgb
 from .variants import Variant
 
 # TextAttributes serialization values.
@@ -449,7 +449,11 @@ def is_palette_slot(key: str) -> bool:
 
 def readable(v: Variant, entries: dict[str, dict[str, str]]) -> dict[str, dict[str, str]]:
     """Text below 3:1 on its background moves toward Kansō's lightest or darkest
-    color, keeping its hue. In pearl this darkens the orange warning color."""
+    color, keeping its hue. In pearl this darkens the orange warning color.
+
+    Those two colors are far enough apart that one of them reaches 3:1 on any
+    background (test_contrast); readable_pair's moved background would mean a
+    palette where that no longer holds, so it is an error here."""
     text_bg = entries["TEXT"]["BACKGROUND"]
     light = v.color("pearlWhite0")
     dark = v.color("zenBg0") if v.dark else v.color("pearlBlack0")
@@ -462,11 +466,10 @@ def readable(v: Variant, entries: dict[str, dict[str, str]]) -> dict[str, dict[s
         solid = intellij.opaque(fg, bg)
         if contrast(solid, bg) >= MIN_CODE_CONTRAST:
             continue
-        target = light if contrast(light, bg) > contrast(dark, bg) else dark
-        step = 0.0
-        while contrast(mix(solid, target, step), bg) < MIN_CODE_CONTRAST and step < 1:
-            step = min(1.0, step + 0.05)
-        fixed[key] = fields | {"FOREGROUND": mix(solid, target, step)}
+        fixed_fg, fixed_bg = readable_pair(solid, bg, light, dark, MIN_CODE_CONTRAST)
+        if fixed_bg != bg:
+            raise ValueError(f"{key}: neither {light} nor {dark} reaches {MIN_CODE_CONTRAST}:1 on {bg}")
+        fixed[key] = fields | {"FOREGROUND": fixed_fg}
     return fixed
 
 
